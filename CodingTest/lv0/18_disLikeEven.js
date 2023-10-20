@@ -1,10 +1,10 @@
 //* 짝수 싫어요
 
 const solution = (n) => {
-  let result = [];
+  let result = []
   for (i = 1; i <= n; i++) {
-    if (i % 2 !== 0) result.push(i);
+    if (i % 2 !== 0) result.push(i)
   }
 
-  return result;
-};
+  return result
+}

@@ -1,3 +1,3 @@
-//* 양꼬치 
+//* 양꼬치
 
-const solution = (n, k) => 12000 * n + (k - Math.trunc(n / 10)) * 2000;
+const solution = (n, k) => 12000 * n + (k - Math.trunc(n / 10)) * 2000

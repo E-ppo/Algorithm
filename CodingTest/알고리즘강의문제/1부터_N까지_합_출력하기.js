@@ -6,6 +6,7 @@
 const solution = (n) => {
   let answer = 0
   for (i = 1; i <= n; i++) {
+    // 1부터 n까지의 합
     answer += i
   }
   return answer

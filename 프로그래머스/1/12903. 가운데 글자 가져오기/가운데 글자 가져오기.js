@@ -1,10 +1,12 @@
 function solution(s) {
-    var answer = '';
-    
-    if (s.length % 2 == 0 ) { 
-        answer = s[s.length / 2 - 1] + s[s.length / 2];
-    } else {
-        answer = s[Math.floor(s.length/2)]; 
-    }
-    return answer;
+  let answer
+  let mid = Math.floor(s.length / 2)
+
+  if (s.length % 2 !== 0) {
+    answer = s[mid]
+  } else {
+    answer = s[mid - 1] + s[mid]
+  }
+
+  return answer
 }

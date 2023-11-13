@@ -13,8 +13,10 @@ function solution(s) {
 
   if (s.length % 2 !== 0) {
     answer = s[mid]
+    // answer = s.substr(mid, 1)
   } else {
     answer = s[mid - 1] + s[mid]
+    // answer = s.substr(mid-1, 2)
   }
 
   return answer

@@ -1,19 +1,18 @@
 const fs = require("fs")
 const filePath = process.platform === "linux" ? "/dev/stdin" : __dirname + "/input.txt"
 const input = fs.readFileSync(filePath).toString().trim().split("\n")
+input.splice(0, 1)
 
-const Numbers = input[1].split(" ").map((i) => Number(i))
-
-let answer = 0
-let count = 0
-
-for (let x of Numbers) {
-  if (x === 1) {
-    count += 1
-    answer += count
-  } else {
-    count = 0
+const answer = input.sort((a, b) => {
+  if (a.length !== b.length) {
+    return a.length - b.length
   }
-}
 
-console.log(answer)
+  // 길이가 같으면 사전 순으로 정렬
+  return a.localeCompare(b)
+})
+
+const unique = Array.from(new Set(answer))
+for (let x of unique) {
+  console.log(x)
+}

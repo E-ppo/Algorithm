@@ -7,19 +7,7 @@ const [count, A, B] = input.map((i) => i.split(" ").map(Number))
 const setB = new Set(B)
 const setA = new Set(A)
 
-let charA = 0
-let charB = 0
-
-for (let x of A) {
-  if (!setB.has(x)) {
-    charA++
-  }
-}
-
-for (let x of B) {
-  if (!setA.has(x)) {
-    charB++
-  }
-}
+const charA = A.filter((x) => !setB.has(x)).length
+const charB = B.filter((x) => !setA.has(x)).length
 
 console.log(charA + charB)

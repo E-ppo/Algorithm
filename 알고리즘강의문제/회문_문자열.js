@@ -13,14 +13,25 @@ function solution(s) {
   // return [...lowerString].reverse().join("") === lowerString ? "YES" : "NO"
 
   const lowerString = s.toLowerCase().split("")
-  const length = lowerString.length - 1
 
-  let answer = true
+  // const length = lowerString.length - 1
 
-  for (i = 0; i <= length; i++) {
-    if (lowerString[i] !== lowerString[length - i]) {
-      answer = false
-      break
+  // let answer = true
+
+  // for (i = 0; i <= length; i++) {
+  //   if (lowerString[i] !== lowerString[length - i]) {
+  //     answer = false
+  //     break
+  //   }
+  // }
+
+  const length = lowerString.length
+
+  let answer = "YES"
+
+  for (i = 0; i <= Math.floor(length / 2); i++) {
+    if (lowerString[i] !== lowerString[length - i - 1]) {
+      return "NO"
     }
   }
 

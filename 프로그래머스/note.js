@@ -1,28 +1,7 @@
-const solution = (score) => {
-  let n = score.length
-  let average = Array.from({ length: n }, () => 1)
-  let answer = Array.from({ length: n }, () => 1)
-
-  for (i = 0; i < n; i++) {
-    average[i] = (score[i][0] + score[i][1]) / 2
-  }
-
-  for (i = 0; i < n; i++) {
-    for (j = 0; j < n; j++) {
-      if (average[j] > average[i]) answer[i]++
-    }
-  }
-  console.log(answer)
+const solution = (a, b) => {
+  if (a % 2 === 1 && b % 2 === 1) return a ** 2 + b ** 2
+  if (a % 2 === 0 && b % 2 === 0) return Math.abs(a - b)
+  return 2 * (a + b)
 }
 
-console.log(
-  solution([
-    [80, 70],
-    [70, 80],
-    [30, 50],
-    [90, 100],
-    [100, 90],
-    [100, 100],
-    [10, 30],
-  ])
-)
+console.log(solution(3, 5))
